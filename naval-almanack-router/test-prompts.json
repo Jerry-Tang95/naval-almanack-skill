@@ -1,0 +1,122 @@
+{
+  "skill": "naval-almanack-router",
+  "version": "0.1.0",
+  "source_book": "纳瓦尔宝典：财富与幸福指南 — [美] 埃里克·乔根森 编著",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我总觉得好机会都轮不到我，听说运气也分种类？纳瓦尔说的四种运气到底是什么意思，我该去卡哪种？",
+      "expected_behavior": "路由到 four-lucks 能力卡：解释四类运气（随机、执着、准备、独特个性吸引），并引导用户用专长+品牌被'找上门'的方式提高遇到好机会的概率。",
+      "notes": "覆盖能力卡：四种运气（非晋级）。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我想用个人名义担责来建立信誉，换取更大的合作机会，这种责任与声誉的复利真的靠谱吗？",
+      "expected_behavior": "路由到 accountability-reputation 能力卡：讲清以个人名义担责如何积累声誉复利、简化合作谈判，并提示与杠杆/长期关系的联动。",
+      "notes": "覆盖能力卡：责任与声誉复利（非晋级）。"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "要不要和这个认识十年的朋友合伙创业，怎么判断一段长期关系值不值得深交或绑定利益？",
+      "expected_behavior": "路由到 long-game-relationships 能力卡：提供长期关系的择友/合伙审查框架，并联动 accountability-reputation 与 acceptance-trilemma。",
+      "notes": "覆盖能力卡：长期关系（非晋级）。"
+    },
+    {
+      "id": "should-trigger-04",
+      "type": "should_trigger",
+      "prompt": "我想给下属真实的负面反馈，但又怕伤人，怎么做到纳瓦尔说的极度坦诚？",
+      "expected_behavior": "路由到 radical-honesty 能力卡：给出'说真话却不伤人的包装'方法，联动长期关系与接受三选一。",
+      "notes": "覆盖能力卡：极度坦诚（非晋级）。"
+    },
+    {
+      "id": "should-trigger-05",
+      "type": "should_trigger",
+      "prompt": "同事天天攀比职级薪资，我很累，怎么退出这种地位游戏？",
+      "expected_behavior": "路由到 status-game-exit 能力卡：解释退出外部比较游戏、建立内在评价标准的路径，并联动 envy-anger-dissolve 与 desire-audit。",
+      "notes": "覆盖能力卡：退出地位游戏（非晋级）。"
+    },
+    {
+      "id": "should-trigger-06",
+      "type": "should_trigger",
+      "prompt": "看到前同事升职发财我特别酸，压不住火，怎么消解这种嫉妒和愤怒？",
+      "expected_behavior": "路由到 envy-anger-dissolve 能力卡：针对具体嫉妒/愤怒情绪给消解方法，而非通用处境框架。",
+      "notes": "覆盖能力卡：嫉妒与愤怒消解（非晋级）。"
+    },
+    {
+      "id": "should-trigger-07",
+      "type": "should_trigger",
+      "prompt": "我钱赚到了但不快乐，想给自己的健康、财富、关系做个全盘体检，看哪里失衡了。",
+      "expected_behavior": "路由到 life-formula-checkup 能力卡：用健康/财富/关系三支柱做结构拆解，并联动 wealth-structure-audit 与 happy-habit-swap。",
+      "notes": "覆盖能力卡：生命公式自检（非晋级）。"
+    },
+    {
+      "id": "should-trigger-08",
+      "type": "should_trigger",
+      "prompt": "是不是退休了才能享受生活？纳瓦尔说的退休定义和内在自由到底指什么，我不想等以后再享受。",
+      "expected_behavior": "路由到 retirement-freedom-reframe 能力卡：重定义退休为'不再为外在成就拖延生活'，并联动 desire-audit 与 status-game-exit。",
+      "notes": "覆盖能力卡：退休与内在自由（非晋级）。"
+    },
+    {
+      "id": "should-trigger-09",
+      "type": "should_trigger",
+      "prompt": "我想建立可靠的阅读地基，不知道读什么、怎么读才不碎片化，求一个输入侧路径。",
+      "expected_behavior": "路由到 reading-foundations 能力卡：给出不惧任何书、能辨真伪的阅读路径，并联动 judgment-toolkit 与 four-lucks。",
+      "notes": "覆盖能力卡：阅读基础（非晋级）。"
+    },
+    {
+      "id": "should-trigger-10",
+      "type": "should_trigger",
+      "prompt": "我焦虑静不下来，想试试纳瓦尔说的无选择觉知冥想，具体怎么练？",
+      "expected_behavior": "路由到 meditation-nonselective-awareness 能力卡：给具体冥想练习与觉察念头的方法，可并入 happy-habit-swap 作为其中一项习惯。",
+      "notes": "覆盖能力卡：冥想与无选择觉知（非晋级）。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我家水管漏了该自己修还是请师傅，哪个划算？",
+      "expected_behavior": "不应作为 router 能力卡处理，应激活 `hourly-rate-triage`（单件任务三选一），本入口仅作背景补充。",
+      "notes": "晋级 Skill 更合适：hourly-rate-triage。"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我为什么这么努力还是穷，是不是该去拿点公司股权？",
+      "expected_behavior": "不应作为 router 能力卡处理，应激活 `wealth-structure-audit`（收入结构诊断），本入口仅作背景补充。",
+      "notes": "晋级 Skill 更合适：wealth-structure-audit。"
+    },
+    {
+      "id": "should-not-trigger-03",
+      "type": "should_not_trigger",
+      "prompt": "我连自己擅长什么都不清楚，更不知道该放大什么。",
+      "expected_behavior": "不应作为 router 能力卡处理，应激活 `specific-knowledge-finder`（专长发现）；次选 `leverage-ladder`（杠杆选择），本入口仅作背景补充。",
+      "notes": "晋级 Skill 更合适：specific-knowledge-finder / leverage-ladder。"
+    },
+    {
+      "id": "should-not-trigger-04",
+      "type": "should_not_trigger",
+      "prompt": "买完东西还是空虚，为什么我总是不满足？",
+      "expected_behavior": "不应作为 router 能力卡处理，应激活 `desire-audit`（欲望审查），本入口仅作背景补充。",
+      "notes": "晋级 Skill 更合适：desire-audit。"
+    },
+    {
+      "id": "should-not-trigger-05",
+      "type": "should_not_trigger",
+      "prompt": "这段关系很痛苦该忍还是该走，卡在这里好难受。",
+      "expected_behavior": "不应作为 router 能力卡处理，应激活 `acceptance-trilemma`（改变/接受/逃避），本入口仅作背景补充。",
+      "notes": "晋级 Skill 更合适：acceptance-trilemma。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "《纳瓦尔宝典》这本书的作者是谁、主要讲了什么？",
+      "expected_behavior": "边界处理：这是书名/概览类查询，不加载任何能力卡，直接由 overview.md/核心原则回答，并明确告知用户本书范围。",
+      "notes": "边界：信息查询走 overview，不进入能力卡路由；另注意本书不提供投资/税务/法律等具体建议。"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "router 的 should_trigger 覆盖内部 10 张非晋级能力卡（四种运气、责任与声誉复利、长期关系、极度坦诚、退出地位游戏、嫉妒与愤怒消解、生命公式自检、退休与内在自由、阅读基础、冥想与无选择觉知）；should_not_trigger 均为 8 个晋级 Skill 更合适的场景；edge 为书名概览类查询。"
+}
